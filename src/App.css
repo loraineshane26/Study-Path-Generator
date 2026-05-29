@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   min-height: 100%;
 }
@@ -13,8 +15,18 @@ body {
   color: #fff;
 }
 
-button, input {
+button,
+input,
+textarea {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 
 .auth-page {
@@ -34,8 +46,8 @@ button, input {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 90px 90px;
   opacity: 0.15;
   animation: gridMove 24s linear infinite;
@@ -114,7 +126,7 @@ button, input {
 .brand-subtitle {
   margin: 22px 0 0;
   font-size: 18px;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 32ch;
 }
 
@@ -137,7 +149,7 @@ button, input {
   align-items: flex-start;
   font-size: 17px;
   line-height: 1.4;
-  color: rgba(255,255,255,0.95);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .brand-icon {
@@ -189,7 +201,10 @@ button, input {
   background: #fff;
   color: #111827;
   outline: none;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
 }
 
 .text-input:focus {
@@ -200,10 +215,13 @@ button, input {
 
 .primary-btn,
 .danger-btn,
-.ghost-btn {
+.step-btn {
   border: none;
   cursor: pointer;
-  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .primary-btn {
@@ -219,7 +237,7 @@ button, input {
 
 .primary-btn:hover,
 .danger-btn:hover,
-.ghost-btn:hover {
+.step-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.04);
 }
@@ -289,7 +307,7 @@ button, input {
   width: 280px;
   padding: 26px 22px;
   background: linear-gradient(180deg, rgba(7, 68, 38, 0.98), rgba(5, 91, 53, 0.94));
-  border-right: 1px solid rgba(255,255,255,0.10);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -315,16 +333,18 @@ button, input {
   color: #fff;
   text-align: left;
   cursor: pointer;
-  transition: background 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
 }
 
 .nav-btn:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateX(3px);
 }
 
 .nav-btn.active {
-  background: rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .danger-btn {
@@ -342,6 +362,7 @@ button, input {
   animation: fadeInUp 0.9s ease both;
   background: rgba(245, 247, 255, 0.97);
   color: #1f2937;
+  overflow-y: auto;
 }
 
 .dashboard-hero {
@@ -373,14 +394,6 @@ button, input {
   font-size: 16px;
 }
 
-.ghost-btn {
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  color: #135c37;
-  border: 1px solid rgba(21, 128, 61, 0.20);
-}
-
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -391,8 +404,8 @@ button, input {
   min-height: 132px;
   padding: 22px;
   border-radius: 18px;
-  background: rgba(255,255,255,0.86);
-  border: 1px solid rgba(21, 128, 61, 0.10);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(21, 128, 61, 0.1);
   backdrop-filter: blur(14px);
 }
 
@@ -409,23 +422,147 @@ button, input {
   color: #135c37;
 }
 
+.roadmap-section,
+.notes-section,
+.history-section,
+.tracker-empty {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(21, 128, 61, 0.1);
+}
+
+.roadmap-header h2,
+.notes-section h3,
+.history-section h3,
+.tracker-empty h3 {
+  margin: 0 0 10px;
+  color: #135c37;
+}
+
+.roadmap-header p {
+  margin: 0 0 8px;
+  color: #4b5563;
+}
+
+.step-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.step-card {
+  padding: 18px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #dbe6dc;
+}
+
+.step-card.done {
+  border-color: #15803d;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.08);
+}
+
+.step-card h4 {
+  margin: 0 0 12px;
+  color: #1f2937;
+}
+
+.step-btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #15803d;
+  color: white;
+  font-weight: 700;
+}
+
+.resource-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.resource-list a {
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #eaf6ee;
+  color: #135c37;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.notes-section textarea {
+  width: 100%;
+  min-height: 120px;
+  margin: 12px 0;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #d2d7df;
+  resize: vertical;
+  color: #111827;
+  background: #fff;
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.saved-notes {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.history-item {
+  padding: 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+.empty-text {
+  margin: 0;
+  color: #4b5563;
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(22px) scale(1.04); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(22px) scale(1.04);
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gridMove {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-90px, -90px); }
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-90px, -90px);
+  }
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1100px) {
